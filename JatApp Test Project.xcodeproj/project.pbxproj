@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BE1388C29F1547900D2DDDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1388B29F1547900D2DDDE /* AppDelegate.swift */; };
+		3BE1388E29F1547900D2DDDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1388D29F1547900D2DDDE /* SceneDelegate.swift */; };
+		3BE1389029F1547900D2DDDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1388F29F1547900D2DDDE /* ViewController.swift */; };
+		3BE1389529F1547A00D2DDDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BE1389429F1547A00D2DDDE /* Assets.xcassets */; };
+		3BE1389829F1547A00D2DDDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE1389629F1547A00D2DDDE /* LaunchScreen.storyboard */; };
+		3BE138A329F1547A00D2DDDE /* JatApp_Test_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138A229F1547A00D2DDDE /* JatApp_Test_ProjectTests.swift */; };
+		3BE138AD29F1547A00D2DDDE /* JatApp_Test_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138AC29F1547A00D2DDDE /* JatApp_Test_ProjectUITests.swift */; };
+		3BE138AF29F1547A00D2DDDE /* JatApp_Test_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138AE29F1547A00D2DDDE /* JatApp_Test_ProjectUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3BE1389F29F1547A00D2DDDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BE1388029F1547900D2DDDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BE1388729F1547900D2DDDE;
+			remoteInfo = "JatApp Test Project";
+		};
+		3BE138A929F1547A00D2DDDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BE1388029F1547900D2DDDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BE1388729F1547900D2DDDE;
+			remoteInfo = "JatApp Test Project";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3BE1388829F1547900D2DDDE /* JatApp Test Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JatApp Test Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BE1388B29F1547900D2DDDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3BE1388D29F1547900D2DDDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3BE1388F29F1547900D2DDDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3BE1389429F1547A00D2DDDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3BE1389729F1547A00D2DDDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3BE1389929F1547A00D2DDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BE1389E29F1547A00D2DDDE /* JatApp Test ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JatApp Test ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BE138A229F1547A00D2DDDE /* JatApp_Test_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JatApp_Test_ProjectTests.swift; sourceTree = "<group>"; };
+		3BE138A829F1547A00D2DDDE /* JatApp Test ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JatApp Test ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BE138AC29F1547A00D2DDDE /* JatApp_Test_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JatApp_Test_ProjectUITests.swift; sourceTree = "<group>"; };
+		3BE138AE29F1547A00D2DDDE /* JatApp_Test_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JatApp_Test_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BE1388529F1547900D2DDDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BE1389B29F1547A00D2DDDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BE138A529F1547A00D2DDDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BE1387F29F1547900D2DDDE = {
+			isa = PBXGroup;
+			children = (
+				3BE1388A29F1547900D2DDDE /* JatApp Test Project */,
+				3BE138A129F1547A00D2DDDE /* JatApp Test ProjectTests */,
+				3BE138AB29F1547A00D2DDDE /* JatApp Test ProjectUITests */,
+				3BE1388929F1547900D2DDDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BE1388929F1547900D2DDDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BE1388829F1547900D2DDDE /* JatApp Test Project.app */,
+				3BE1389E29F1547A00D2DDDE /* JatApp Test ProjectTests.xctest */,
+				3BE138A829F1547A00D2DDDE /* JatApp Test ProjectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BE1388A29F1547900D2DDDE /* JatApp Test Project */ = {
+			isa = PBXGroup;
+			children = (
+				3BE1388B29F1547900D2DDDE /* AppDelegate.swift */,
+				3BE1388D29F1547900D2DDDE /* SceneDelegate.swift */,
+				3BE1388F29F1547900D2DDDE /* ViewController.swift */,
+				3BE1389429F1547A00D2DDDE /* Assets.xcassets */,
+				3BE1389629F1547A00D2DDDE /* LaunchScreen.storyboard */,
+				3BE1389929F1547A00D2DDDE /* Info.plist */,
+			);
+			path = "JatApp Test Project";
+			sourceTree = "<group>";
+		};
+		3BE138A129F1547A00D2DDDE /* JatApp Test ProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				3BE138A229F1547A00D2DDDE /* JatApp_Test_ProjectTests.swift */,
+			);
+			path = "JatApp Test ProjectTests";
+			sourceTree = "<group>";
+		};
+		3BE138AB29F1547A00D2DDDE /* JatApp Test ProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3BE138AC29F1547A00D2DDDE /* JatApp_Test_ProjectUITests.swift */,
+				3BE138AE29F1547A00D2DDDE /* JatApp_Test_ProjectUITestsLaunchTests.swift */,
+			);
+			path = "JatApp Test ProjectUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BE1388729F1547900D2DDDE /* JatApp Test Project */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BE138B229F1547A00D2DDDE /* Build configuration list for PBXNativeTarget "JatApp Test Project" */;
+			buildPhases = (
+				3BE1388429F1547900D2DDDE /* Sources */,
+				3BE1388529F1547900D2DDDE /* Frameworks */,
+				3BE1388629F1547900D2DDDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JatApp Test Project";
+			productName = "JatApp Test Project";
+			productReference = 3BE1388829F1547900D2DDDE /* JatApp Test Project.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3BE1389D29F1547A00D2DDDE /* JatApp Test ProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BE138B529F1547A00D2DDDE /* Build configuration list for PBXNativeTarget "JatApp Test ProjectTests" */;
+			buildPhases = (
+				3BE1389A29F1547A00D2DDDE /* Sources */,
+				3BE1389B29F1547A00D2DDDE /* Frameworks */,
+				3BE1389C29F1547A00D2DDDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BE138A029F1547A00D2DDDE /* PBXTargetDependency */,
+			);
+			name = "JatApp Test ProjectTests";
+			productName = "JatApp Test ProjectTests";
+			productReference = 3BE1389E29F1547A00D2DDDE /* JatApp Test ProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3BE138A729F1547A00D2DDDE /* JatApp Test ProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BE138B829F1547A00D2DDDE /* Build configuration list for PBXNativeTarget "JatApp Test ProjectUITests" */;
+			buildPhases = (
+				3BE138A429F1547A00D2DDDE /* Sources */,
+				3BE138A529F1547A00D2DDDE /* Frameworks */,
+				3BE138A629F1547A00D2DDDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BE138AA29F1547A00D2DDDE /* PBXTargetDependency */,
+			);
+			name = "JatApp Test ProjectUITests";
+			productName = "JatApp Test ProjectUITests";
+			productReference = 3BE138A829F1547A00D2DDDE /* JatApp Test ProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BE1388029F1547900D2DDDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					3BE1388729F1547900D2DDDE = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					3BE1389D29F1547A00D2DDDE = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 3BE1388729F1547900D2DDDE;
+					};
+					3BE138A729F1547A00D2DDDE = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 3BE1388729F1547900D2DDDE;
+					};
+				};
+			};
+			buildConfigurationList = 3BE1388329F1547900D2DDDE /* Build configuration list for PBXProject "JatApp Test Project" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3BE1387F29F1547900D2DDDE;
+			productRefGroup = 3BE1388929F1547900D2DDDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BE1388729F1547900D2DDDE /* JatApp Test Project */,
+				3BE1389D29F1547A00D2DDDE /* JatApp Test ProjectTests */,
+				3BE138A729F1547A00D2DDDE /* JatApp Test ProjectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3BE1388629F1547900D2DDDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BE1389829F1547A00D2DDDE /* LaunchScreen.storyboard in Resources */,
+				3BE1389529F1547A00D2DDDE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BE1389C29F1547A00D2DDDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BE138A629F1547A00D2DDDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BE1388429F1547900D2DDDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BE1389029F1547900D2DDDE /* ViewController.swift in Sources */,
+				3BE1388C29F1547900D2DDDE /* AppDelegate.swift in Sources */,
+				3BE1388E29F1547900D2DDDE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BE1389A29F1547A00D2DDDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BE138A329F1547A00D2DDDE /* JatApp_Test_ProjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BE138A429F1547A00D2DDDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BE138AF29F1547A00D2DDDE /* JatApp_Test_ProjectUITestsLaunchTests.swift in Sources */,
+				3BE138AD29F1547A00D2DDDE /* JatApp_Test_ProjectUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3BE138A029F1547A00D2DDDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BE1388729F1547900D2DDDE /* JatApp Test Project */;
+			targetProxy = 3BE1389F29F1547A00D2DDDE /* PBXContainerItemProxy */;
+		};
+		3BE138AA29F1547A00D2DDDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BE1388729F1547900D2DDDE /* JatApp Test Project */;
+			targetProxy = 3BE138A929F1547A00D2DDDE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3BE1389629F1547A00D2DDDE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BE1389729F1547A00D2DDDE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3BE138B029F1547A00D2DDDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3BE138B129F1547A00D2DDDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3BE138B329F1547A00D2DDDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JatApp Test Project/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "spezza.JatApp-Test-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3BE138B429F1547A00D2DDDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "JatApp Test Project/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "spezza.JatApp-Test-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3BE138B629F1547A00D2DDDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "spezza.JatApp-Test-ProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JatApp Test Project.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JatApp Test Project";
+			};
+			name = Debug;
+		};
+		3BE138B729F1547A00D2DDDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "spezza.JatApp-Test-ProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JatApp Test Project.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JatApp Test Project";
+			};
+			name = Release;
+		};
+		3BE138B929F1547A00D2DDDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "spezza.JatApp-Test-ProjectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "JatApp Test Project";
+			};
+			name = Debug;
+		};
+		3BE138BA29F1547A00D2DDDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "spezza.JatApp-Test-ProjectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "JatApp Test Project";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BE1388329F1547900D2DDDE /* Build configuration list for PBXProject "JatApp Test Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BE138B029F1547A00D2DDDE /* Debug */,
+				3BE138B129F1547A00D2DDDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BE138B229F1547A00D2DDDE /* Build configuration list for PBXNativeTarget "JatApp Test Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BE138B329F1547A00D2DDDE /* Debug */,
+				3BE138B429F1547A00D2DDDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BE138B529F1547A00D2DDDE /* Build configuration list for PBXNativeTarget "JatApp Test ProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BE138B629F1547A00D2DDDE /* Debug */,
+				3BE138B729F1547A00D2DDDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BE138B829F1547A00D2DDDE /* Build configuration list for PBXNativeTarget "JatApp Test ProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BE138B929F1547A00D2DDDE /* Debug */,
+				3BE138BA29F1547A00D2DDDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3BE1388029F1547900D2DDDE /* Project object */;
+}
