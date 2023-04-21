@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		3BE1388C29F1547900D2DDDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1388B29F1547900D2DDDE /* AppDelegate.swift */; };
 		3BE1388E29F1547900D2DDDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1388D29F1547900D2DDDE /* SceneDelegate.swift */; };
-		3BE1389029F1547900D2DDDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1388F29F1547900D2DDDE /* ViewController.swift */; };
+		3BE1389029F1547900D2DDDE /* Top250FilmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1388F29F1547900D2DDDE /* Top250FilmsViewController.swift */; };
 		3BE1389529F1547A00D2DDDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BE1389429F1547A00D2DDDE /* Assets.xcassets */; };
 		3BE1389829F1547A00D2DDDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE1389629F1547A00D2DDDE /* LaunchScreen.storyboard */; };
 		3BE138A329F1547A00D2DDDE /* JatApp_Test_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138A229F1547A00D2DDDE /* JatApp_Test_ProjectTests.swift */; };
 		3BE138AD29F1547A00D2DDDE /* JatApp_Test_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138AC29F1547A00D2DDDE /* JatApp_Test_ProjectUITests.swift */; };
 		3BE138AF29F1547A00D2DDDE /* JatApp_Test_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138AE29F1547A00D2DDDE /* JatApp_Test_ProjectUITestsLaunchTests.swift */; };
+		3BE138BD29F2975D00D2DDDE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138BC29F2975D00D2DDDE /* NetworkService.swift */; };
+		3BE138C029F297DC00D2DDDE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138BF29F297DC00D2DDDE /* HTTPMethod.swift */; };
+		3BE138C329F2983F00D2DDDE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138C229F2983F00D2DDDE /* NetworkError.swift */; };
+		3BE138C529F2985800D2DDDE /* Resourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138C429F2985800D2DDDE /* Resourse.swift */; };
+		3BE138C829F29D2500D2DDDE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138C729F29D2500D2DDDE /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +43,7 @@
 		3BE1388829F1547900D2DDDE /* JatApp Test Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JatApp Test Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE1388B29F1547900D2DDDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BE1388D29F1547900D2DDDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3BE1388F29F1547900D2DDDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3BE1388F29F1547900D2DDDE /* Top250FilmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top250FilmsViewController.swift; sourceTree = "<group>"; };
 		3BE1389429F1547A00D2DDDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BE1389729F1547A00D2DDDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BE1389929F1547A00D2DDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +52,11 @@
 		3BE138A829F1547A00D2DDDE /* JatApp Test ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JatApp Test ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE138AC29F1547A00D2DDDE /* JatApp_Test_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JatApp_Test_ProjectUITests.swift; sourceTree = "<group>"; };
 		3BE138AE29F1547A00D2DDDE /* JatApp_Test_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JatApp_Test_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3BE138BC29F2975D00D2DDDE /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		3BE138BF29F297DC00D2DDDE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		3BE138C229F2983F00D2DDDE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		3BE138C429F2985800D2DDDE /* Resourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourse.swift; sourceTree = "<group>"; };
+		3BE138C729F29D2500D2DDDE /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +107,11 @@
 		3BE1388A29F1547900D2DDDE /* JatApp Test Project */ = {
 			isa = PBXGroup;
 			children = (
+				3BE138C629F29D1600D2DDDE /* Models */,
+				3BE138BB29F2974300D2DDDE /* NetworkService */,
 				3BE1388B29F1547900D2DDDE /* AppDelegate.swift */,
 				3BE1388D29F1547900D2DDDE /* SceneDelegate.swift */,
-				3BE1388F29F1547900D2DDDE /* ViewController.swift */,
+				3BE1388F29F1547900D2DDDE /* Top250FilmsViewController.swift */,
 				3BE1389429F1547A00D2DDDE /* Assets.xcassets */,
 				3BE1389629F1547A00D2DDDE /* LaunchScreen.storyboard */,
 				3BE1389929F1547A00D2DDDE /* Info.plist */,
@@ -122,6 +134,33 @@
 				3BE138AE29F1547A00D2DDDE /* JatApp_Test_ProjectUITestsLaunchTests.swift */,
 			);
 			path = "JatApp Test ProjectUITests";
+			sourceTree = "<group>";
+		};
+		3BE138BB29F2974300D2DDDE /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				3BE138BE29F297CB00D2DDDE /* Models */,
+				3BE138BC29F2975D00D2DDDE /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		3BE138BE29F297CB00D2DDDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BE138BF29F297DC00D2DDDE /* HTTPMethod.swift */,
+				3BE138C229F2983F00D2DDDE /* NetworkError.swift */,
+				3BE138C429F2985800D2DDDE /* Resourse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3BE138C629F29D1600D2DDDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BE138C729F29D2500D2DDDE /* Movie.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,8 +293,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BE1389029F1547900D2DDDE /* ViewController.swift in Sources */,
+				3BE1389029F1547900D2DDDE /* Top250FilmsViewController.swift in Sources */,
+				3BE138C529F2985800D2DDDE /* Resourse.swift in Sources */,
 				3BE1388C29F1547900D2DDDE /* AppDelegate.swift in Sources */,
+				3BE138BD29F2975D00D2DDDE /* NetworkService.swift in Sources */,
+				3BE138C329F2983F00D2DDDE /* NetworkError.swift in Sources */,
+				3BE138C029F297DC00D2DDDE /* HTTPMethod.swift in Sources */,
+				3BE138C829F29D2500D2DDDE /* Movie.swift in Sources */,
 				3BE1388E29F1547900D2DDDE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
