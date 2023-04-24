@@ -20,6 +20,8 @@
 		3BE138C329F2983F00D2DDDE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138C229F2983F00D2DDDE /* NetworkError.swift */; };
 		3BE138C529F2985800D2DDDE /* Resourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138C429F2985800D2DDDE /* Resourse.swift */; };
 		3BE138C829F29D2500D2DDDE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138C729F29D2500D2DDDE /* Movie.swift */; };
+		3BE138CB29F2B2A700D2DDDE /* MovieInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138CA29F2B2A700D2DDDE /* MovieInfoCell.swift */; };
+		3BE138CE29F6717700D2DDDE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138CD29F6717700D2DDDE /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		3BE138C229F2983F00D2DDDE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		3BE138C429F2985800D2DDDE /* Resourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourse.swift; sourceTree = "<group>"; };
 		3BE138C729F29D2500D2DDDE /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		3BE138CA29F2B2A700D2DDDE /* MovieInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoCell.swift; sourceTree = "<group>"; };
+		3BE138CD29F6717700D2DDDE /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		3BE1388A29F1547900D2DDDE /* JatApp Test Project */ = {
 			isa = PBXGroup;
 			children = (
+				3BE138CC29F6716A00D2DDDE /* ImageCache */,
+				3BE138C929F2B28900D2DDDE /* Cells */,
 				3BE138C629F29D1600D2DDDE /* Models */,
 				3BE138BB29F2974300D2DDDE /* NetworkService */,
 				3BE1388B29F1547900D2DDDE /* AppDelegate.swift */,
@@ -161,6 +167,22 @@
 				3BE138C729F29D2500D2DDDE /* Movie.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3BE138C929F2B28900D2DDDE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3BE138CA29F2B2A700D2DDDE /* MovieInfoCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3BE138CC29F6716A00D2DDDE /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				3BE138CD29F6717700D2DDDE /* ImageCache.swift */,
+			);
+			path = ImageCache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +315,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE138CE29F6717700D2DDDE /* ImageCache.swift in Sources */,
 				3BE1389029F1547900D2DDDE /* Top250FilmsViewController.swift in Sources */,
 				3BE138C529F2985800D2DDDE /* Resourse.swift in Sources */,
 				3BE1388C29F1547900D2DDDE /* AppDelegate.swift in Sources */,
+				3BE138CB29F2B2A700D2DDDE /* MovieInfoCell.swift in Sources */,
 				3BE138BD29F2975D00D2DDDE /* NetworkService.swift in Sources */,
 				3BE138C329F2983F00D2DDDE /* NetworkError.swift in Sources */,
 				3BE138C029F297DC00D2DDDE /* HTTPMethod.swift in Sources */,
