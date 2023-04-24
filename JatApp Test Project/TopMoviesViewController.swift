@@ -21,7 +21,7 @@ import UIKit
  8. Local/remote search
 */
 
-class Top250FilmsViewController: UIViewController {
+final class TopMoviesViewController: UIViewController {
     lazy var refreshControl: UIRefreshControl = {
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(reloadAction), for: .valueChanged)
@@ -107,7 +107,7 @@ class Top250FilmsViewController: UIViewController {
     }
 }
 
-extension Top250FilmsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TopMoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return min(top250Data.count, 10)
     }
@@ -118,9 +118,15 @@ extension Top250FilmsViewController: UICollectionViewDelegate, UICollectionViewD
         cell.setup(with: movie)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = top250Data[indexPath.row]
+        let movieDetailsViewController = MovieDetailsViewController(movie: movie)
+        navigationController?.pushViewController(movieDetailsViewController, animated: true)
+    }
 }
 
-extension Top250FilmsViewController: UICollectionViewDelegateFlowLayout {
+extension TopMoviesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize.init(width: collectionView.frame.size.width, height: 200)
     }

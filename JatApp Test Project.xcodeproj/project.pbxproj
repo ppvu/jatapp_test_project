@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B94C8C629F6D9EC005B3786 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B94C8C529F6D9EC005B3786 /* MovieDetailsViewController.swift */; };
 		3BE1388C29F1547900D2DDDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1388B29F1547900D2DDDE /* AppDelegate.swift */; };
 		3BE1388E29F1547900D2DDDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1388D29F1547900D2DDDE /* SceneDelegate.swift */; };
-		3BE1389029F1547900D2DDDE /* Top250FilmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1388F29F1547900D2DDDE /* Top250FilmsViewController.swift */; };
+		3BE1389029F1547900D2DDDE /* TopMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1388F29F1547900D2DDDE /* TopMoviesViewController.swift */; };
 		3BE1389529F1547A00D2DDDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BE1389429F1547A00D2DDDE /* Assets.xcassets */; };
 		3BE1389829F1547A00D2DDDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE1389629F1547A00D2DDDE /* LaunchScreen.storyboard */; };
 		3BE138A329F1547A00D2DDDE /* JatApp_Test_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE138A229F1547A00D2DDDE /* JatApp_Test_ProjectTests.swift */; };
@@ -42,10 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B94C8C529F6D9EC005B3786 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		3BE1388829F1547900D2DDDE /* JatApp Test Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JatApp Test Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE1388B29F1547900D2DDDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BE1388D29F1547900D2DDDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3BE1388F29F1547900D2DDDE /* Top250FilmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top250FilmsViewController.swift; sourceTree = "<group>"; };
+		3BE1388F29F1547900D2DDDE /* TopMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviesViewController.swift; sourceTree = "<group>"; };
 		3BE1389429F1547A00D2DDDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BE1389729F1547A00D2DDDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BE1389929F1547A00D2DDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,10 +119,11 @@
 				3BE138BB29F2974300D2DDDE /* NetworkService */,
 				3BE1388B29F1547900D2DDDE /* AppDelegate.swift */,
 				3BE1388D29F1547900D2DDDE /* SceneDelegate.swift */,
-				3BE1388F29F1547900D2DDDE /* Top250FilmsViewController.swift */,
+				3BE1388F29F1547900D2DDDE /* TopMoviesViewController.swift */,
 				3BE1389429F1547A00D2DDDE /* Assets.xcassets */,
 				3BE1389629F1547A00D2DDDE /* LaunchScreen.storyboard */,
 				3BE1389929F1547A00D2DDDE /* Info.plist */,
+				3B94C8C529F6D9EC005B3786 /* MovieDetailsViewController.swift */,
 			);
 			path = "JatApp Test Project";
 			sourceTree = "<group>";
@@ -316,10 +319,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BE138CE29F6717700D2DDDE /* ImageCache.swift in Sources */,
-				3BE1389029F1547900D2DDDE /* Top250FilmsViewController.swift in Sources */,
+				3BE1389029F1547900D2DDDE /* TopMoviesViewController.swift in Sources */,
 				3BE138C529F2985800D2DDDE /* Resourse.swift in Sources */,
 				3BE1388C29F1547900D2DDDE /* AppDelegate.swift in Sources */,
 				3BE138CB29F2B2A700D2DDDE /* MovieInfoCell.swift in Sources */,
+				3B94C8C629F6D9EC005B3786 /* MovieDetailsViewController.swift in Sources */,
 				3BE138BD29F2975D00D2DDDE /* NetworkService.swift in Sources */,
 				3BE138C329F2983F00D2DDDE /* NetworkError.swift in Sources */,
 				3BE138C029F297DC00D2DDDE /* HTTPMethod.swift in Sources */,
