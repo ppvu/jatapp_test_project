@@ -9,6 +9,7 @@ import Foundation
 
 final class NetworkService {
     private let defaultHeaders: [String: String]
+    private let cache = URLCache(memoryCapacity: 10 * 1024 * 1024, diskCapacity: 10 * 1024 * 1024, diskPath: nil)
     
     init(defaultHeaders: [String : String] = [:]) {
         self.defaultHeaders = defaultHeaders
@@ -34,25 +35,35 @@ extension NetworkService {
             request.allHTTPHeaderFields = allHeaders
         }
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error {
-                completion(.failure(.networkError(error)))
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse, validStatusCodes.contains(httpResponse.statusCode) else {
-                completion(.failure(.badStatusCode))
-                return
-            }
-            
-            guard let data else {
-                completion(.failure(.badData))
-                return
-            }
-            
+        if let cachedResponse = cache.cachedResponse(for: request) {
+            let data = cachedResponse.data
             completion(.success(data))
+        } else {
+            let task = URLSession.shared.dataTask(with: request) { [cache] data, response, error in
+                if let error {
+                    completion(.failure(.networkError(error)))
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse, validStatusCodes.contains(httpResponse.statusCode) else {
+                    completion(.failure(.badStatusCode))
+                    return
+                }
+                
+                guard let data else {
+                    completion(.failure(.badData))
+                    return
+                }
+                
+                if let response {
+                    let cachedResponse = CachedURLResponse(response: response, data: data)
+                    cache.storeCachedResponse(cachedResponse, for: request)
+                }
+                
+                completion(.success(data))
+            }
+            
+            task.resume()
         }
-        
-        task.resume()
     }
     
     func requestDecoding<T: Decodable>(
