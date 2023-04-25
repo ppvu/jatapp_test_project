@@ -17,7 +17,8 @@ final class MovieDetailsModel {
     }
 }
 
-private extension MovieDetailsModel {
+extension MovieDetailsModel {
+    // NOTE: This method is internal for XCTest
     func countCharactersSorted(with string: String) -> [(Character, Int)] {
         let keyedCharacters = string
             .lowercased()
