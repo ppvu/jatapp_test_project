@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 
+/// It's strange, but in xcodeproj this model doesn't exist.
 final class MovieInfoModel {
     var title: String = ""
     var year: String = ""
