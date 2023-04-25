@@ -8,11 +8,14 @@
 import Foundation
 import UIKit
 
-// TODO: - sortedcounts -> Typealias, make MODEL
-
 final class MovieDetailsViewController: UIViewController {
     private let model: MovieDetailsModel
-    private lazy var tableView: UITableView = UITableView()
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,27 +32,9 @@ final class MovieDetailsViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func configure() {
-        view.addSubview(tableView)
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.countCellIdentifier)
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
-        
-        title = Constants.title
-    }
 }
+
+// MARK: - UITableViewDelegate methods
 
 extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,6 +48,27 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
 }
+
+private extension MovieDetailsViewController {
+    func configure() {
+        view.addSubview(tableView)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.countCellIdentifier)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
+        title = Constants.title
+    }
+}
+
+// MARK: - Some Constants
 
 fileprivate extension MovieDetailsViewController {
     enum Constants {

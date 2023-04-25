@@ -26,6 +26,8 @@ import UIKit
 final class TopMoviesViewController: UIViewController {
     /// Model for network requests and other business logic
     private let topMoviesModel: TopMoviesModel
+    
+    /// Search controller for movie search.
     private let searchController = UISearchController(searchResultsController: nil)
     
     /// The refresh control used to provide pull-to-refresh functionality to the collection view.
@@ -71,6 +73,7 @@ final class TopMoviesViewController: UIViewController {
         configureSearchController()
     }
     
+    /// Private function that configures UISearchController
     private func configureSearchController() {
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
@@ -120,6 +123,8 @@ private extension TopMoviesViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegate methods
+
 extension TopMoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         topMoviesModel.movies.count
@@ -156,6 +161,8 @@ extension TopMoviesViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout methods
+
 extension TopMoviesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
@@ -166,6 +173,8 @@ extension TopMoviesViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - Delegate methods for UISearchController
+
 extension TopMoviesViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         topMoviesModel.searchText = searchController.searchBar.text ?? ""
@@ -175,6 +184,9 @@ extension TopMoviesViewController: UISearchResultsUpdating, UISearchBarDelegate 
         topMoviesModel.searchText = ""
     }
 }
+
+
+// MARK: - Magic Numbers
 
 fileprivate extension TopMoviesViewController {
     enum Constants {

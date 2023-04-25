@@ -15,8 +15,10 @@ final class MovieDetailsModel {
         self.movie = movie
         sortedCounts = countCharactersSorted(with: movie.title)
     }
-    
-    private func countCharactersSorted(with string: String) -> [(Character, Int)] {
+}
+
+private extension MovieDetailsModel {
+    func countCharactersSorted(with string: String) -> [(Character, Int)] {
         let keyedCharacters = string
             .lowercased()
             .filter { !$0.isWhitespace }

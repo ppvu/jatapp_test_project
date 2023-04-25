@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Class that download image or take it from Cache.
 final class ImageLoader {
     func image(with resource: Resourse, complition: @escaping (UIImage?) -> Void) {
         if let image = ImageCache.shared.image(for: resource.path) {

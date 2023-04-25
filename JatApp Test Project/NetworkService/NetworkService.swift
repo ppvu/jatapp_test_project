@@ -7,8 +7,6 @@
 
 import Foundation
 
-// TODO: - Decompose request method, valid status codes -> constant, capacity -> to constants
-
 final class NetworkService {
     private let session: URLSession
     
@@ -18,10 +16,7 @@ final class NetworkService {
 }
 
 extension NetworkService {
-    func executeRequest(
-        resourse: Resourse,
-        completion: @escaping (Result<Data, NetworkError>) -> Void
-    ) {
+    func executeRequest(resourse: Resourse, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         guard let url = resourse.url else { return completion(.failure(.badUrl)) }
         
         var request = URLRequest(url: url)

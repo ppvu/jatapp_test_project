@@ -8,22 +8,19 @@
 import Foundation
 import UIKit
 
-// TODO: - decompose configure method + constants enum + model for cell + init with Movie
-
 final class MovieInfoCell: UICollectionViewCell {
-    private static let indent: CGFloat = 8.0
     private lazy var gradientLayer = CAGradientLayer()
     
-    private lazy var titleLabel: UILabel = Self.makeLabel(withTextSize: 14.0)
-    private lazy var yearLabel: UILabel = Self.makeLabel(withTextSize: 12.0)
-    private lazy var crewLabel: UILabel = Self.makeLabel(withTextSize: 12.0)
-    private lazy var ratingLabel: UILabel = Self.makeLabel(withTextSize: 12.0)
+    private lazy var titleLabel: UILabel = makeLabel(withTextSize: Constants.titleTextSize)
+    private lazy var yearLabel: UILabel = makeLabel()
+    private lazy var crewLabel: UILabel = makeLabel()
+    private lazy var ratingLabel: UILabel = makeLabel()
     
     private lazy var moreInfoStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [yearLabel, crewLabel, ratingLabel])
         stackView.axis = .vertical
         stackView.alignment = .leading
-        stackView.spacing = 4
+        stackView.spacing = Constants.stackViewSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -62,43 +59,31 @@ final class MovieInfoCell: UICollectionViewCell {
         posterImageView.image = nil
     }
     
-    private func setupGradientLayer() {
-        gradientLayer.colors = [UIColor.magenta.cgColor, UIColor.orange.cgColor, UIColor.yellow.cgColor, UIColor.systemMint.cgColor]
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
-        gradientLayer.locations = [0.0, 1.0]
-        contentView.layer.insertSublayer(gradientLayer, at: 0)
-    }
-    
     private func configure() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(moreInfoStackView)
         contentView.addSubview(posterImageView)
         
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = Self.indent
-        
         NSLayoutConstraint.activate([
-            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            contentView.topAnchor.constraint(equalTo: topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
-
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Self.indent),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Self.indent),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Self.indent),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.indent),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.indent),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.indent),
             
-            moreInfoStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Self.indent),
-            moreInfoStackView.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: Self.indent),
-            moreInfoStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Self.indent),
+            moreInfoStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Constants.indent),
+            moreInfoStackView.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: Constants.indent),
+            moreInfoStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.indent),
 
             posterImageView.topAnchor.constraint(equalTo: moreInfoStackView.topAnchor),
-            posterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Self.indent),
-            posterImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Self.indent)
+            posterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.indent),
+            posterImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.indent),
+            posterImageView.widthAnchor.constraint(equalToConstant: Constants.imageWidth)
         ])
+        
+        configureCollectionView()
     }
 }
+
+// MARK: - Cell configuration
 
 extension MovieInfoCell {
     func configureCell(with movie: Top250DataDetails) {
@@ -115,13 +100,58 @@ extension MovieInfoCell {
     }
 }
 
+// MARK: - UI components
+
 private extension MovieInfoCell {
-    static func makeLabel(withTextSize size: CGFloat) -> UILabel {
+    func setupGradientLayer() {
+        gradientLayer.colors = [
+            UIColor.magenta.cgColor,
+            UIColor.orange.cgColor,
+            UIColor.yellow.cgColor,
+            UIColor.systemMint.cgColor
+        ]
+        
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+        gradientLayer.locations = [0.0, 1.0]
+        contentView.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    func configureCollectionView() {
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = Constants.indent
+        
+        NSLayoutConstraint.activate([
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+}
+
+// MARK: - Function for labels
+
+private extension MovieInfoCell {
+    func makeLabel(withTextSize size: CGFloat = Constants.additionalTextSize) -> UILabel {
         let label = UILabel()
         label.textColor = .white
         label.font = .monospacedSystemFont(ofSize: size, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         return label
+    }
+}
+
+// MARK: - Some Magic Nums in Constants
+
+fileprivate extension MovieInfoCell {
+    enum Constants {
+        static let imageWidth: CGFloat = 120
+        static let indent: CGFloat = 8
+        static let additionalTextSize: CGFloat = 12
+        static let titleTextSize: CGFloat = 14
+        static let stackViewSpacing: CGFloat = 4
     }
 }
