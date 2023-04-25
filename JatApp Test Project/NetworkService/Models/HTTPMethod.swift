@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An enumeration of HTTP methods supported by the HTTP protocol.
 enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"

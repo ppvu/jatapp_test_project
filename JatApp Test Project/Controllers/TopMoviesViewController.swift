@@ -25,11 +25,8 @@ import UIKit
 
 final class TopMoviesViewController: UIViewController {
     /// Model for network requests and other business logic
-    private let topMoviesModel = TopMoviesModel()
+    private let topMoviesModel: TopMoviesModel
     private let searchController = UISearchController(searchResultsController: nil)
-    
-    private var isSearching: Bool = false
-    private var filteredMovies: [Top250DataDetails] = []
     
     /// The refresh control used to provide pull-to-refresh functionality to the collection view.
     private lazy var refreshControl: UIRefreshControl = {
@@ -48,11 +45,23 @@ final class TopMoviesViewController: UIViewController {
         return collectionView
     }()
     
+    init(topMoviesModel: TopMoviesModel) {
+        self.topMoviesModel = topMoviesModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         topMoviesModel.didUpdated = { [weak self] in
-            self?.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
         }
         
         setupNavigationController()
@@ -60,8 +69,6 @@ final class TopMoviesViewController: UIViewController {
         setupCollectionView()
         handleRefreshControl()
         configureSearchController()
-        
-        filteredMovies = Array(topMoviesModel.moviesData[..<10])
     }
     
     private func configureSearchController() {
@@ -71,17 +78,10 @@ final class TopMoviesViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.enablesReturnKeyAutomatically = false
         searchController.searchBar.returnKeyType = .done
-        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.hidesSearchBarWhenScrolling = true
         navigationItem.searchController = searchController
         definesPresentationContext = true
         searchController.searchBar.placeholder = "Search Movie by name"
-    }
-        
-    /// Reloads the top 250 films data and stops the refresh control animation.
-    @objc private func handleRefreshControl() {
-        refreshControl.beginRefreshing()
-        topMoviesModel.fetchMoviesList()
-        refreshControl.endRefreshing()
     }
 }
 
@@ -91,12 +91,13 @@ private extension TopMoviesViewController {
     func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(MovieInfoCell.self, forCellWithReuseIdentifier: "MovieInfoCell")
+        collectionView.register(MovieInfoCell.self, forCellWithReuseIdentifier: Constants.cellIdentifier)
     }
     
     func setupNavigationController() {
+        navigationController?.navigationBar.barTintColor = .systemTeal
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Top 10 IMDB"
+        title = Constants.title
     }
     
     /// Configures the layout of the collection view and adds it to the view hierarchy.
@@ -110,27 +111,39 @@ private extension TopMoviesViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
     }
+    
+    /// Reloads the top 250 films data and stops the refresh control animation.
+    @objc func handleRefreshControl() {
+        refreshControl.beginRefreshing()
+        topMoviesModel.fetchMoviesList()
+        refreshControl.endRefreshing()
+    }
 }
 
 extension TopMoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if isSearching {
-            return filteredMovies.count
-        } else {
-            return 10
-        }
+        topMoviesModel.movies.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieInfoCell", for: indexPath) as! MovieInfoCell
-        let movie = filteredMovies[indexPath.row]
-        cell.setup(with: movie)
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: Constants.cellIdentifier, for: indexPath
+        ) as? MovieInfoCell else {
+            assertionFailure("Cell type not exist!")
+            return UICollectionViewCell()
+        }
+        
+        cell.configureCell(with: topMoviesModel.movies[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let movie = filteredMovies[indexPath.row]
-        let movieDetailsViewController = MovieDetailsViewController(movie: movie)
+        let movie = topMoviesModel.movies[indexPath.row]
+        let movieDetailsModel = MovieDetailsModel(movie: movie)
+        let movieDetailsViewController = MovieDetailsViewController(model: movieDetailsModel)
         
         let transition = CATransition()
         transition.duration = 0.5
@@ -149,35 +162,26 @@ extension TopMoviesViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        CGSize.init(width: collectionView.frame.size.width, height: 200)
+        CGSize(width: collectionView.frame.size.width - Constants.horizontalPadding * 2, height: Constants.cellHeight)
     }
 }
 
 extension TopMoviesViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let searchText = searchController.searchBar.text else { return }
-
-        if !searchText.isEmpty {
-            isSearching = true
-            filteredMovies.removeAll()
-
-            for movie in topMoviesModel.moviesData {
-                if movie.title.lowercased().contains(searchText.lowercased()) {
-                    filteredMovies.append(movie)
-                }
-            }
-        } else {
-            isSearching = false
-            filteredMovies.removeAll()
-            filteredMovies = topMoviesModel.moviesData
-        }
-
-        collectionView.reloadData()
+        topMoviesModel.searchText = searchController.searchBar.text ?? ""
     }
-
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isSearching = false
-        filteredMovies.removeAll()
-        collectionView.reloadData()
+        topMoviesModel.searchText = ""
+    }
+}
+
+fileprivate extension TopMoviesViewController {
+    enum Constants {
+        static let cellHeight: CGFloat = 200.0
+        static let horizontalPadding: CGFloat = 8.0
+        static let cellIdentifier: String = "MovieInfoCell"
+        static let title = "Top 10 IMDB"
+        static let initialCellsCount: Int = 10
     }
 }

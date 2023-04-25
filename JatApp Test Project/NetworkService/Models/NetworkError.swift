@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An enumeration of network errors.
 enum NetworkError: Error {
     case badUrl
     case badStatusCode

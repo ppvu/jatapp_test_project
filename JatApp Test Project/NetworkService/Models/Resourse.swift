@@ -7,16 +7,19 @@
 
 import Foundation
 
+/// Struct that have all data for network request that supported by NetworkService class.
 struct Resourse {
     let method: HTTPMethod
-    let url: URL?
+    let path: String
     let body: Data?
-    let headers: [String: String]?
     
-    init(method: HTTPMethod = .get, url: URL?, body: Data? = nil, headers: [String : String]? = nil) {
+    var url: URL? {
+        URL(string: path)
+    }
+    
+    init(method: HTTPMethod = .get, path: String, body: Data? = nil) {
         self.method = method
-        self.url = url
+        self.path = path
         self.body = body
-        self.headers = headers
     }
 }

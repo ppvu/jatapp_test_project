@@ -9,9 +9,21 @@ import Foundation
 
 final class TopMoviesModel {
     var moviesData: [Top250DataDetails] = []
-    var didUpdated: (() -> ())?
+    var didUpdated: (() -> Void)?
     
-    private let networkService = NetworkService()
+    var searchText: String = "" {
+        didSet {
+            didUpdated?()
+        }
+    }
+    
+    var movies: [Top250DataDetails] {
+        if searchText.isEmpty, moviesData.count > 10 {
+            return Array(moviesData[..<10])
+        } else {
+            return moviesData.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+        }
+    }
 }
 
 extension TopMoviesModel {
@@ -23,20 +35,19 @@ extension TopMoviesModel {
             fatalError("IMDBApiKey not found in Info.plist")
         }
         
-        let url = URL(string: "https://imdb-api.com/en/API/Top250Movies/\(apiKey)")
-        
-        networkService.requestDecoding(resourse: Resourse(url: url), decodingType: Top250Data.self) { [weak self] result in
+        NetworkService().requestDecoding(
+            resourse: Resourse(path: "https://imdb-api.com/en/API/Top250Movies/\(apiKey)"),
+            decodingType: Top250Data.self
+        ) { [weak self] result in
+            guard let self else { return }
             switch result {
             case .success(let data):
                 if data.errorMessage.isEmpty {
-                    self?.moviesData = data.items
-                    self?.didUpdated?()
-                    return
+                    self.moviesData = data.items
+                    self.didUpdated?()
                 }
-                
-                fallthrough
             case .failure:
-                self?.moviesData = []
+                self.moviesData = []
             }
         }
     }

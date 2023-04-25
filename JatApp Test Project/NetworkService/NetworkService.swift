@@ -7,85 +7,55 @@
 
 import Foundation
 
+// TODO: - Decompose request method, valid status codes -> constant, capacity -> to constants
+
 final class NetworkService {
-    private let defaultHeaders: [String: String]
-    private let cache = URLCache(memoryCapacity: 10 * 1024 * 1024, diskCapacity: 10 * 1024 * 1024, diskPath: nil)
+    private let session: URLSession
     
-    init(defaultHeaders: [String : String] = [:]) {
-        self.defaultHeaders = defaultHeaders
+    init(session: URLSession = URLSession.shared) {
+        self.session = session
     }
 }
 
 extension NetworkService {
-    func request(resourse: Resourse, validStatusCodes: Range<Int> = 200..<300, completion: @escaping (Result<Data, NetworkError>) -> Void) {
-        guard let url = resourse.url else {
-            completion(.failure(.badUrl))
-            return
-        }
+    func executeRequest(
+        resourse: Resourse,
+        completion: @escaping (Result<Data, NetworkError>) -> Void
+    ) {
+        guard let url = resourse.url else { return completion(.failure(.badUrl)) }
         
         var request = URLRequest(url: url)
         request.httpMethod = resourse.method.rawValue
         request.httpBody = resourse.body
         
-        if let headers = resourse.headers {
-            let allHeaders = defaultHeaders.merging(headers, uniquingKeysWith: { defaultKey, perRequestKey in
-                return perRequestKey
-            })
-            
-            request.allHTTPHeaderFields = allHeaders
-        }
-        
-        if let cachedResponse = cache.cachedResponse(for: request) {
-            let data = cachedResponse.data
-            completion(.success(data))
-        } else {
-            let task = URLSession.shared.dataTask(with: request) { [cache] data, response, error in
-                if let error {
-                    completion(.failure(.networkError(error)))
-                }
-                
-                guard let httpResponse = response as? HTTPURLResponse, validStatusCodes.contains(httpResponse.statusCode) else {
-                    completion(.failure(.badStatusCode))
-                    return
-                }
-                
-                guard let data else {
-                    completion(.failure(.badData))
-                    return
-                }
-                
-                if let response {
-                    let cachedResponse = CachedURLResponse(response: response, data: data)
-                    cache.storeCachedResponse(cachedResponse, for: request)
-                }
-                
+        session.dataTask(with: request) { data, response, error in
+            if let error {
+                completion(.failure(.networkError(error)))
+            } else if let data {
                 completion(.success(data))
+            } else {
+                completion(.failure(.badData))
             }
-            
-            task.resume()
         }
+        .resume()
     }
     
     func requestDecoding<T: Decodable>(
         resourse: Resourse,
         decodingType: T.Type,
-        validStatusCodes: Range<Int> = 200..<300,
-        completion: @escaping (Result<T, NetworkError>) -> Void)
-    {
-        request(resourse: resourse, validStatusCodes: validStatusCodes) { result in
+        completion: @escaping (Result<T, NetworkError>) -> Void
+    ) {
+        executeRequest(resourse: resourse) { result in
             switch result {
             case .success(let data):
-                let jsonDecoder = JSONDecoder()
                 do {
-                    let object = try jsonDecoder.decode(T.self, from: data)
+                    let object = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(object))
                 } catch {
                     completion(.failure(.decodingError(error)))
-                    print(error)
                 }
             case .failure(let error):
                 completion(.failure(error))
-                print(error)
             }
         }
     }
