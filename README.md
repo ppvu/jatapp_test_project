@@ -1,5 +1,5 @@
 # Movie List Application
-![App Screenshot](https://user-images.githubusercontent.com/75310530/234407425-dd4330ab-f640-4293-b479-5efb3ebfa7f4.png)
+<img src="https://user-images.githubusercontent.com/75310530/234407425-dd4330ab-f640-4293-b479-5efb3ebfa7f4.png" width="350" height="800">
 
 This is a simple iOS application that uses the IMDB API to display the top 10 movies from the list of TOP250Movies. The application displays the title, rank, and image of each movie in a 'UICollectionView', and allows the user to select a movie to view more information about it.
 
