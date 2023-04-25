@@ -16,12 +16,12 @@ final class NetworkService {
 }
 
 extension NetworkService {
-    func executeRequest(resourse: Resourse, completion: @escaping (Result<Data, NetworkError>) -> Void) {
-        guard let url = resourse.url else { return completion(.failure(.badUrl)) }
+    func executeRequest(resource: Resource, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+        guard let url = resource.url else { return completion(.failure(.badUrl)) }
         
         var request = URLRequest(url: url)
-        request.httpMethod = resourse.method.rawValue
-        request.httpBody = resourse.body
+        request.httpMethod = resource.method.rawValue
+        request.httpBody = resource.body
         
         session.dataTask(with: request) { data, response, error in
             if let error {
@@ -36,11 +36,11 @@ extension NetworkService {
     }
     
     func requestDecoding<T: Decodable>(
-        resourse: Resourse,
+        resource: Resource,
         decodingType: T.Type,
         completion: @escaping (Result<T, NetworkError>) -> Void
     ) {
-        executeRequest(resourse: resourse) { result in
+        executeRequest(resource: resource) { result in
             switch result {
             case .success(let data):
                 do {

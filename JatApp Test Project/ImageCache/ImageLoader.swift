@@ -9,11 +9,11 @@ import UIKit
 
 /// Class that download image or take it from Cache.
 final class ImageLoader {
-    func image(with resource: Resourse, complition: @escaping (UIImage?) -> Void) {
+    func image(with resource: Resource, complition: @escaping (UIImage?) -> Void) {
         if let image = ImageCache.shared.image(for: resource.path) {
             complition(image)
         } else {
-            NetworkService().executeRequest(resourse: resource) { result in
+            NetworkService().executeRequest(resource: resource) { result in
                 switch result {
                 case .success(let data):
                     if let resultImage = UIImage(data: data) {

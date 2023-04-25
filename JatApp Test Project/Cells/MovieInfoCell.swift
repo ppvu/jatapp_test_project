@@ -92,7 +92,7 @@ extension MovieInfoCell {
         crewLabel.text = "Crew: \(movie.crew)"
         ratingLabel.text = "IMDB Rating: \(movie.imdbRating)"
         
-        ImageLoader().image(with: Resourse(path: movie.image)) { image in
+        ImageLoader().image(with: Resource(path: movie.image)) { image in
             DispatchQueue.main.async { [weak self] in
                 self?.posterImageView.image = image
             }

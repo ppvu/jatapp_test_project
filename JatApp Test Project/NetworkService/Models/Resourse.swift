@@ -1,5 +1,5 @@
 //
-//  Resourse.swift
+//  Resource.swift
 //  JatApp Test Project
 //
 //  Created by Yevhen Kononenko on 21.04.2023.
@@ -8,7 +8,7 @@
 import Foundation
 
 /// Struct that have all data for network request that supported by NetworkService class.
-struct Resourse {
+struct Resource {
     let method: HTTPMethod
     let path: String
     let body: Data?

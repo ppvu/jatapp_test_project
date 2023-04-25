@@ -36,7 +36,7 @@ extension TopMoviesModel {
         }
         
         NetworkService().requestDecoding(
-            resourse: Resourse(path: "https://imdb-api.com/en/API/Top250Movies/\(apiKey)"),
+            resource: Resource(path: "https://imdb-api.com/en/API/Top250Movies/\(apiKey)"),
             decodingType: Top250Data.self
         ) { [weak self] result in
             guard let self else { return }
