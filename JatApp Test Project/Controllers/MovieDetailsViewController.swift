@@ -9,25 +9,21 @@ import Foundation
 import UIKit
 
 final class MovieDetailsViewController: UIViewController {
-    lazy var tableView: UITableView = {
+    private var movie: Top250DataDetails
+    private var sortedCounts: [(Character, Int)] = []
+    
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
-    var sortedCounts: [(Character, Int)] = []
-    
-    private var movie: Top250DataDetail
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
-        
-        title = "Characters"
     }
     
-    init(movie: Top250DataDetail) {
+    init(movie: Top250DataDetails) {
         self.movie = movie
         super.init(nibName: nil, bundle: nil)
         sortedCounts = countCharactersSorted(with: movie.title)
@@ -39,7 +35,6 @@ final class MovieDetailsViewController: UIViewController {
     
     private func configure() {
         view.addSubview(tableView)
-        view.backgroundColor = .blue
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -52,9 +47,11 @@ final class MovieDetailsViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+        
+        title = "Characters"
     }
     
-    func countCharactersSorted(with string: String) -> [(Character, Int)] {
+    private func countCharactersSorted(with string: String) -> [(Character, Int)] {
         let counts = string
             .lowercased()
             .filter { !$0.isWhitespace }

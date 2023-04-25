@@ -8,11 +8,11 @@
 import Foundation
 
 struct Top250Data: Decodable {
-    let items: [Top250DataDetail]
+    let items: [Top250DataDetails]
     let errorMessage: String
 }
 
-struct Top250DataDetail: Decodable {
+struct Top250DataDetails: Decodable {
     let id: String
     let rank: String
     let title: String

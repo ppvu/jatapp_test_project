@@ -7,6 +7,8 @@
 
 import UIKit
 
+/// Class that used for cache the images recieved from network request
+/// 
 final class ImageCache {
     static let shared = ImageCache()
     private let cache = NSCache<NSString, UIImage>()
